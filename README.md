@@ -1,4 +1,4 @@
-my first ever self made fullstack project. 
+my first ever self made fullstack project. made in april 2024
 Project Idea Description – Culturama
 
 Culturama is a culture-centric web application built using .NET and C#, designed to promote India’s rich temple heritage and simplify travel planning for religious tourists. The core idea is to create a single platform where users can explore temples and easily find essential services around them, such as accommodations, priests (pandits), tour guides, and other local facilities.
