@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/RegionalTempleInfo.styles.css" asp-append-version="true" />
+    <style>
+        .navbar {
+            padding-top: 20px; /* Adjust top padding */
+            padding-bottom: 20px; /* Adjust bottom padding */
+            height: 80px; /* Adjust height */
+        }
+
+        .navbar-brand
+        {
+            width: 450px;
+            height: 80px;
+            overflow: hidden;
+            margin-top: -6px;
+        }
+        .navbar-nav .nav-link {
+            line-height: 80px; /* Match line-height with navbar height */
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: transparent; /* Adjust background color */
+            padding: 10px 0; /* Adjust top and bottom padding */
+            text-align: right; /* Align text to the right */
+            color: #6c757d; /* Adjust text color */
+            font-size: 14px; /* Adjust font size */
+            z-index: 1000; /* Ensure footer is above other content */
+        }
+    </style>
+</head>
+<body style="background-color: #FF9933;">
+    <!-- Change background color here -->
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-#FF9933  border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <!-- Logo image that redirects to a specified URL when clicked -->
+                <a class="navbar-brand" href="@Url.Action("homepage", "Templeinfo")">
+                    <img src="https://lh3.googleusercontent.com/pw/AP1GczO8oKIkcpyY4ya2o0pO6TOaI_DGoD2qwlFHGiw96aGvR7tttdr0D3j5ZHRaFUWDNrvT-eZLL69nYnu2oX6KsLuwWpC3iylLGvWppk2zA6bP7qHGuNQUouo6GCG8Fq1Kd_8US-zXA8cvNnKgsLaSEFNXKRFniyM6yqETAuDzRKKmnXLB1fdL-QRn82Jn12ZE9I4gG0YaO-AHeX6__8uBUGsfJzA_3TNu9ovb-Vy3DkLuyCvKgbcwqycYvcK9w4Qj5So1E2ky5CAIktMwcCBrWYDsa-__mRsJgiTADHW-Ppd8sskfAYo-nLlukTNgCE3VFamsmXftJh3xM3oyqux76HSAXoMY1DHNjiSmD7yP-NVWleFveIwyhQu9MhrTw3etYm4eNhGugGIPFNBSLaavCnmLiUArYO9AusDI5rowUI9rGU07gTmdSxdezHKLsvJP_Oqxgn2Aopn2ok00w8KfyxZCnT4tFQDfOgIvtsiMefhvIguj8yzoSXNu2HDMyJJhkdgy-g0Rlj81IWHH-sjLYxy5jc0Di7DjQrtHf8Z6nAq-QWrTBFFgJ4fxpnDLlZq-plGpDbPDFUBZ6A2AQjfepQCNy0WBtb9KL8KapOGG_LI787XQ7qjBiAnuBmbR1ICPGUL3OGrJb1e0An-FOgbeZm_3Atssa-ATqrMo7qVQHRodpgZi2wQGvbUZHLBF-c1ukkEW2b4CRMs_GM0OfU5caZ7bxXxU2XCOdsfHWT_Fbj6dESiIHtgk257GqGSjY1IzrREdrhAl6tDv9l--xLfSNptKGokFLXzra5DXy2oiblS7sYN8kqixx_VkxstMyOuI6sdgFiZeSPrq46LJsG7g7uG4eKGcJcrdXxSFCMo1r6QcuHePClwIYKzZbnfqP9LNV6EWA29vU9FAAUYg62CmE9wYjA4brDezkcrPEoIYWkv9HzYYmBttEePvBt3isTeFNfYU_0dVdtqyB0gU0Fv-sH39EQT22c2q_g=w631-h166-s-no-gm?authuser=0" alt="Logo" width="450" height="75">
+                </a>
+                <!-- Remove the navbar-brand element -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <!-- Remove the <li> elements for Home and Privacy -->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container" style="padding-bottom: 60px;">
+        <!-- Adjust padding to accommodate footer -->
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Find Temple</title>
+    <style>
+       
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffecb3;
+            margin: 0;
+            padding: 20px;
+            background-image: url('https://static.vecteezy.com/system/resources/thumbnails/026/231/717/original/particles-background-mandala-devotional-free-video.jpg'); /* Replace 'texture.jpg' with your texture image path */
+             background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255,255, 0); 
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+        }
+
+        
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-right: 10px;
+            color: #444; 
+        }
+
+        input[type="text"] {
+            padding: 8px;
+            border: 1px solid #ddd; 
+            border-radius: 4px;
+            flex: 1;
+            font-family: 'Arial', sans-serif; 
+            font-size: 16px; 
+        }
+
+        button[type="submit"] {
+            padding: 10px 20px;
+            background-color: #ffa726; 
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-family: 'Arial', sans-serif; 
+            font-size: 18px; 
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); 
+            box-shadow: 0 0 10px rgba(255, 167, 38, 0.5); 
+        }
+
+            button[type="submit"]:hover {
+                background-color: #fb8c00; 
+            }
+
+        
+        .temple-container {
+            background-color: #fff9c4; 
+            border: 1px solid #ffca28; 
+            border-radius: 8px;
+            margin-bottom: 20px;
+            padding: 15px;
+            font-family: 'Arial', sans-serif; 
+        }
+
+            .temple-container div {
+                margin-bottom: 10px;
+                color: #444; 
+                font-size: 16px; 
+            }
+
+                .temple-container div:last-child {
+                    margin-bottom: 0;
+                }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #444; 
+            font-size: 28px; 
+            font-family: 'Arial Black', sans-serif; 
+            text-align: center;
+            text-transform: uppercase; 
+        }
+
+        h2 {
+            margin-top: 30px;
+            margin-bottom: 10px;
+            color: #ffa726; 
+            font-size: 24px; 
+            font-family: 'Arial Black', sans-serif; 
+        }
+
+        p {
+            color: #666; 
+            font-size: 16px; 
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Find Temple</h1>
+        <form method="get">
+            <div>
+                <label for="Site">Name Of Site:</label>
+                <input type="text" id="godName" name="godName" placeholder="enter site name" />
+            </div>
+            <div>
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" placeholder="Enter Location..." />
+            </div>
+            <button type="submit">Search</button>
+        </form>
+
+        @if (Model != null && Model.Count > 0)
+        {
+            <h2>Temple Information</h2>
+            @foreach (var temple in Model)
+            {
+                <div class="temple-container">
+                    <div><strong>Name of Site:</strong> @temple.Name_of_god</div>
+                    <div><strong>Type of site:</strong> @temple.name_of_mandir</div>
+                    <div><strong>Exact Location:</strong> @temple.exact_location</div>
+                    <div><strong>Stays nearby:</strong> @temple.stays</div>
+                </div>
+            }
+        }
+        else
+        {
+            <p>No temples found.</p>
+        }
+
+    </div>
+</body>
+</html>

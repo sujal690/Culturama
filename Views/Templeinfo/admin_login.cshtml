@@ -1,0 +1,112 @@
+﻿@{
+    ViewData["Title"] = "Admin Login";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-image: url('https://img.freepik.com/free-vector/flat-ganesh-chaturthi-background_23-2149491422.jpg?size=626&ext=jpg&ga=GA1.1.735520172.1711411200&semt=ais');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            justify-content: center; 
+            align-items: center; 
+        }
+
+        .login-container {
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+            width: 50%;
+            margin-bottom: 10px;
+            margin-left: 300px;
+        }
+
+        .login-container h1 {
+            width: 100%;
+            margin-bottom: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .form-group input, .form-group button {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #FF9933;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .form-group button {
+            background-color: #FF9933;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+
+        .form-group button:hover {
+            background-color: #E68A00;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="row justify-content-center ">
+        <h1>Admin Login</h1>
+        @if (!string.IsNullOrEmpty(TempData["failed"] as string))
+        {
+            <div class="alert alert-danger" role="alert">
+                @TempData["failed"]
+            </div>
+        }
+        </div>
+        <form method="post">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required />
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required />
+            </div>
+            <div class="form-group">
+                <button type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

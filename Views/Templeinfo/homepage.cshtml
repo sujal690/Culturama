@@ -1,0 +1,261 @@
+﻿<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Culturama: Regional Temple Information and Booking</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ff9933;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 20;
+            background-image: url("https://lh3.googleusercontent.com/pw/AP1GczOWtI8r3LNqzPVtxo_To4ls1jGg1p1EeuPncTmi2aSpyqWbah-hZ4hxh0coYpXWEkH1D1s9Ap62dguWETtGjvfcYbUTjVa1XpdUOgIbaDjxF1u71oC7bXaAlELlwEOjbSI-ne863UgxujbyxZt1htABQ0-7wWeZvjT8KSE9XS1yrY4WREFtFEryrqph-6ID_sil-pjhP2HGfUso7WutrIEe_sIhUi7YnFhK1zFdGRpwvryThcECq4LEti0dIlZ9lhFYeGNEh65oqp7OeS2M2mevrZJC7BajL-LfM73Jif7ePn3VcMY8fHlGPTmqugFagt4JCQy3d0c5tlQi37hdI0rYRrglxLktGdwgnSiR0bWI2e5F_DYB2fUwTS2cDOkibGWrtfL0WyAoSLcWaTrNmU88BqIPmJPc-GJ0E5FUjwWz6XarNeq2_UBHwhn-KyHtW4tPwyLtNxJmrYKMdtWQxP0u9JDM8-CoOQIvtubQ1pg3V_ou2lGCJM5ezDIePEk1f7N7X206UxZwrsvgX-krOOmBSl9ziOrllcBEFkXhG3PRrv6Qaw0HKZJsucUMdP3iafhdIwOrU7cvBBGdBJ2XHGKBKsIxO7bn4EQrRX5O3aufzsvL2F-XScDQCnZ-7XKURjLjN8R5kaJCNzD9qanEbC1ajmgNcuuCmZG8GJOeA3WXU3iMfHKmSy_Mk-2Qa65BEDycJfqGzRdmHijDFQ35uPFPNe6PlhZGZJE16-5CChUmfNT4NpdguamOOecKv3uVwezMdNI8D0ZCGc1U8h2n4inF-od70enr629owqKyTHFIAbEpnTwUruVkETeeTVDRBCsGag4DcVxyHmM-ieDdf_vDtNSiR1QX41HhZGa4UvJYtySoxIRc4Qcqd24Qi4BW29-GP6KYb5mzenOOuivkw-GK7rwRT__8CnCq1SxALtpF_I-U2BkVfdhcw6B4dV6O18yorO65wl5lFoAusK-wBznhihGwnGXa-Q=w810-h540-s-no-gm?authuser=0");
+            background-repeat: no-repeat;
+            border: 5px;
+        }
+
+        .container {
+            width: 150%; 
+            margin: 0 auto;
+            padding: 20px;
+            border: 5px;
+            text-align: center;
+            color: #ffff;
+            font-weight: bold;
+        }
+
+        .container1 {
+            height: 150%;
+            flex: 0 0 100%;
+            width: 125%;
+            font-color: green,white,orange;
+            margin: auto;
+            padding: 20px;
+            border: 5px;
+            text-align: justify-all;
+            color: #ffff;
+            font-weight: bold;
+        }
+        h1, p {
+            -webkit-text-stroke: 1px solid #ff9933;
+            font-size: xx-large;
+            
+            color: white;
+            text-shadow: -1px 1px 0 #ff9933, 1px 1px 0 #ff9933, 1px -1px 0 #ff9933, -1px -1px 0 #ff9933;
+            box-shadow: rgba(0,0,0,0.3)
+        }
+
+        .button-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 999;
+        }
+
+        .button {
+            margin-left: 10px;
+            padding: 10px 20px;
+            background: linear-gradient(to right, #FF9933, #FFB74D);
+            border: none;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+            .button:hover {
+                background: linear-gradient(to right, #FFB74D, #FF9933);
+                box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            }
+
+        .carousel-item img {
+            object-fit: cover;
+            height: 650px;
+            width: 100%;
+        }
+
+        .carousel-caption {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .carousel {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .culturama-text {
+            color: #ffff;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .founder-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .founder-container1 {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        .founder1 {
+            flex: 1;
+            margin: 0 10px;
+        }
+
+            .founder1 img {
+                width: 100%;
+                height: 70%;
+                margin-bottom: 10px;
+            }
+
+            .founder1 p {
+                font-weight: bold;
+                text-emphasis-color: #ff9933;
+                font-size: 14px;
+            }
+        .founder {
+            flex: 1;
+            margin: 0 10px;
+        }
+
+            .founder img {
+                width: 100%;
+                height: 50%;
+                margin-bottom: 10px;
+            }
+
+            .founder p {
+                font-weight: bold;
+                text-emphasis-color: #ff9933;
+                font-size: 14px;
+            }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="color: #FF9933;font-size:xxx-large; font-stretch:extra-condensed; font-weight: bold;">Culturama</a>
+        </div>
+    </nav>
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="margin-bottom: 20px" width: "150">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://www.fabhotels.com/blog/wp-content/uploads/2019/08/Temple-in-India_600.jpg" class="d-block w-100" alt="Slide 1">
+                <div class="carousel-caption">
+                    <h5>Welcome to Culturama</h5>
+                    <p>Discover nearby temples and accommodations</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.bhaskarassets.com/webp/thumb/512x0/web2images/521/2019/09/04/0521_panchamukhi-ganesha-temple-front-view-730_0.jpg" class="d-block w-100" alt="Slide 2">
+                <div class="carousel-caption">
+                    <h5>Explore Cultural Heritage</h5>
+                    <p>Experience the richness of regional temples</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://d27k8xmh3cuzik.cloudfront.net/wp-content/uploads/2017/12/rsz_1shutterstock_316235984.jpg" class="d-block w-100" alt="Slide 3">
+                <div class="carousel-caption">
+                    <h5>Plan Your Next Trip</h5>
+                    <p>Book your stay near your favorite temples</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div class="container1>
+        
+        <h1>Welcome to Culturama</h1>
+        <p text-align =justify>Are you tired of the hassle of planning cultural trips and finding nearby accommodations?
+        At Culturama, we understand your frustration and have designed a solution to simplify your travel experience.
+        Our platform offers comprehensive information on cultural sites, including temples, historical landmarks, and more, along with nearby hotels for convenient accommodation.
+        With Culturama, you can explore the richness of cultural heritage without the stress of tedious planning. Whether you're a solo traveler, a family on vacation, or a group of friends seeking adventure, we've got you covered.
+        Start your cultural journey today with Culturama and make unforgettable memories at every destination.</p>
+        <a href= @Url.Action("login","Templeinfo") class="link-button">Explore Now</a>
+
+    </div>
+
+    <div class="button-container">
+        <a href = "@Url.Action("event_festivals", "Templeinfo")" class="button">festivals</a>
+        <a href="@Url.Action("admin_login", "Templeinfo")" class="button">Admin</a>
+        <a href="@Url.Action("login", "Templeinfo")" class="button">Login</a>
+        <a href="@Url.Action("Index", "Templeinfo")" class="button">Register</a>
+    </div>
+    <div class="container">
+        <h1>Explore The Arts</h1>
+        <div class="founder-container1">
+            <div class="founder1">
+                <img src="https://live.staticflickr.com/7530/16264290762_9cc7ef11ee_b.jpg" alt="qutub minar">
+                <h1>Qutub Minar</h1>
+            </div>
+            <div class="founder1">
+                <img src="https://static.toiimg.com//photo/100936029/100936029.jpg?imgsize=172438" alt="Temple">
+                <h1>Artistic Sculptures on Temple</h1>
+            </div>
+            <div class="founder1">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczMLWZ3YeRLXZ4zeW9MJGRf-AfJ5X-wpM30APKFNuGYImg47RfiWUtvKpfsOEaJdKeA2t3u51wf-VZFWJszvfAzNLMdGFu5mK5PMaMPqwta6M81TBjQRvjSyXRniRump9UNNBIIXYVJAX01AxUj5FYPq5kriOzLEa4Ez86vfb6EeSFxggacmq_FNdxHaqr2KyPVccHg7I8rJmnKbTVVq3kO4dCL78DGeQTnzmSjKm1GytUGlxri1iXs4GLX8p0F4iHTf-YVWcvB5YL27kyYQMqe-r_4JSpUr0Sz6JL5CUtQm_xzZ7F5OiQWSIff0gv2_-0d3scrkOLPsxk4isI3sY5j9bDw713apkt8HnsY5hfOmc7DHBRE6J7xpDR8A-eHyeS5doPP5wRmXl94M704b0eefkihnrC2SwWZSrdd0SjdnLsENmKcK84lOUOSiwcKYX33SN8u3EUpbIA-b-MwrYFyvwubAVbfiLeIyPVCJRSnSAxyPOzFOW0EmW8dZK5ymnfRUG8n-SKIJZRRxU2kj4Zf4ZPd43negtMUYScumgOdsGd8F3WTDlo6NM7iLAg8ylWPY7jyAbdZ2oF3cb66LGLjTcpPIO1QOWUqmUy0beSDEjPem1cSxepZhMOR1Pv5gPdYDDJly06QG_ysL4uIuCN-jRbokN5WlG3CPfDFNPLIIZNcolIbWF7DSXbPJPnSZPbNQMMCrbi45UYLdnwmuOHTJ-nHvs9pfTplGzfTvG3I6u5_klaeoeyn7uuxDVfm0KWaAyJtO9MQWthGn00xPo3oPZ12hC0oPSDgJtWZYt5vRYJ9FQh30hae17WdQuRCyayd1tghvlgvGrUXwyDVM53CSaksdX36HDvkcZZbdHiyuzphvXZqZpcW_ZzU5MYgHw9_sXzhrkR6xWA9kSiBdpOffEZs-b3uDN2wUy31GQIJ_lE29axlH8zRSzpHkteVaeUAPvn6jUtaamwfVWBbP2OySGznwzvV7YA=w395-h879-s-no-gm?authuser=0" alt="Vallabh Bhai Patel Statue">
+                <h1>Great Statue Of Unity</h1>
+            </div>  
+        </div>
+    </div>
+    <div class="container">
+        <h1>Contact Information</h1>
+        <p>Email: info@culturama.com</p>
+        <p>Phone: +1234567890</p>
+    </div>
+
+    <div class="container">
+        <h1>Founders</h1>
+        <div class="founder-container">
+            <div class="founder">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczP6RBymfRo3TFPfUmYL3-G_Tz2LXRamntmLZJvfkEKIrT5LrjW0mdAWDXeJyhFTuNmx_8fDWNe7fUCN8pcRRJf7vdyAma3wbE8Kd5WL3aDt6fvMag9sNNoZuFhW1OxKWeQafgwaK7BtEE6aLaZE0SOseb3HXtzAl4Y08N0TTPckAtgpoe_i9-0Ky0BuuGrpJimv7BXvmpnpCam8cIrRtbuyNotMdz6dHKUx3HbNszC821jlrIqUDRUJcSPI1_s2jzxywhpKPaG9tL-uDVIYPdf9YXwwR3QssqnnvdpN1Vpm07brFf8TOms-EFSNXnsbBYHggKAv_iyfkt-m0E1HRPuvJNyTY3KbJMK0Q7uTcATnJxhfZzDxNBH3aIZFjW1WMwg5GiIAXH95lHvwlXhEZ4_J7eBUG9UJ33mNFW_jXpPo6276F2EjHB7FDR2nGZhP4FMHuaW_7q2lmD3iIEHFYNcmfg9Aomthysg7qMMMpx_oABGr_1OC62Dc_6DfB17rV2zdAOyz5B603CY5tfM8v9bb7VPbF8ukXE046UrZq9wXMBM_CeYkyMH_BfDGh-lzaqhi5dE9YxXqsrd3gymClSG3BgdfbzgwEDJV8V-VzpcoPz-E-L7ZHaIj60mo7Z09gN6hI1krGGU82az4WweqlAe9WfSNzJ5TdhG0H6iL2bWBRoapy9o6BNiuNPKSUT-sjAbcVGYyd8j7Dqr0uvehSuTPs34Zvq2BZtguvZIsi1-BRLLt5N-6PHezbVSC-KEoAUL2Yxi0rK53xQhVBWsviMY1dMt-QU26_X-MO8TCw4rh-3OxwnOi_paOTrGkeQn1FAz3D0mqQvhQkYFA3ecPJIB1dd_dFhqQWW7pMoEzcL_-9DxxgjqevVFmgIf9b7SEAabzbFdm01l7ZL2RJlUPxoQcc3RuKTiZaGbkgedVw5KLQ6JPBVTSA_dWbAU4rUz2IgKMUB-YUPGgAlQ_1kzFVCyvHMIKsjEmJA=w799-h879-s-no-gm?authuser=0" alt="Founder 1">
+                <h1>Sujal Shah<br>CEO</h1>
+            </div>
+            <div class="founder">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczOxOtY7-qXz_Mcr2qggghgDxMLw-YgSTT_XCT2NjVfEz8kZeKJYhTBbtXdJdnCqxATpb-bfTrpaoSVMI6i5ffCahxh4HPpdNngOYBpWpdO9KtWoHkfKz8ydI8vLQtW_40YPMsww9UEB-m-xaqow461W2XN9sEEeCuZLTy8TkkLlAkeBAvUoP7kx_wVNJE7f_d6aMwbvRhTu26_mM_FX29idi3teXD52qHkrnyl810L7lVOPm4sTfDOuOSdt1EmVWDiMyrB7tdbmyQrAExgm7DVtBZ9uopN59lfcfcbZ67RHRAiY2hpSuddZhY3yWwq7S983B4x6ZSyW3lm5WfDn1lpoZykXnlWeHKo_0-ayUWTJCyzxoHxgXEye41bZBOum5P_duoirJ2GBSUY1UIy1pX3XHvEaT6wTIBK4MNVTkaYSrp1WIDrAAesy8KOH-wAaK0NQduXyIpBGlJ4ily8rbVt6rTjoUV1S89ClpoFbjnq7goasbuvGKLHY7pZ-8ehb5doXHAZbNkArtu-Gat8iur8tEXUPWcM5ksWy1yzwylK8LBZwh2ntAKsxjanoGbTXSouLUsWOqHMKVauAjpj96M5mwjdEpDEKC-_0HmzvwyZRquef-XbRdSZFDqKMMlc5E_JuvdmuruxNWrshyji9C2KUxkYcqcYsLRZZEWyQfLKbHtQDp_vDr4gqNMrGofwtLUuioTzibTAg2ib6RtwRhkJb8NWrCmiX3EUF1cu0CTKD0x4sV65ckEWaoM9zJW6juJTfstDWrwFHxAVrGMizozPyGPGRa0UuQReEtyj4VbIsBTlN7vx31qK24WL8Zs4QLl8aL8ttfnpkewBrusIPzEx7BdXN-pw-c7LsGxLB30rEtpNo2DdIxoH7O-B78Fbj7NhCVFWA9Ka7svdID6wuzs70Oqpi0sRyb2iHqEUkEqR0x0Dlr9Bf2cklgxrGUcRcHJF6g-yAiKz3t2rOxizSWszSEAn6Erau=w695-h879-s-no-gm?authuser=0" alt="Founder 2">
+                <h1>Soham Bhaye<br>CTO</h1>
+            </div>
+            <div class="founder">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczNJwPahZ0ZPjzeUVAGSiJ4irKthE0Vv-drJwhMLIISHmbIJt_r6IOC0A1LGeDLEDXpy4e94F68PqhouEeTo3GbJ3jnWUqXbDuGx98tu8gvK5j2f443XLe9FZ7MF43yeBD47-MP1dKpOEZWUlIFU25tEtVk_OcOhFZk6PF608nbYXestwuiSsAVgBea6cKdBkJ27H25OntLe90y_77UeP5Va_B4778yIK2PEoHK8Uf_0rLs5ojPlhTcQ24GTF3AEpM_nhYhWr_DnyQR5x8l8qAP2v-qlnlnbh-24Xfu39mvgHe0DyO1Egvm9ETRbZwP-oK9U5ACBpawmZCHV1oAXELV7lHEgQttnhosKb1XjHJ-wx4uoE1iyFru023zvnujkte0SfPUutLwIm9S5BmSCSvxTjYniyvmg2KPJX5ZPZxpvnD3QB_E0uAAlNzc8fEVKSzgqmX7T6rAVEgVxDwLxPrSd_bwSwXzELAhyokOK7A42DyL513KXNmjlkNQ0eM776nRn6JgP8zeASo1oRMdOM4hMwnfqxpde3yqNdiVZegEDTbU9GnEw7qqv4eK_2ojMSPUOetRHecPcfGC412Jv9L2Zj2YLua0MmORrezR6_6B4do8OclvZsC5KyQrjZVstRAv5bw381nnWMpoZXB81X-N7y9Yz6yQPiT3HrvhqVHE_UHlF2GHFwagi2IoICnO2bjYBDwZTtm05217GIr34INA1zxGu3PkjrfpbSZMFnhv-Ux7Cjz1PM4IGzVysxWSAWVhPM_gjALe9pykQjyBxzfEpVBLa7pDDvUUKXHsh3BJvIwWH9AeF0ZvzCuUDEqvCR3x0VbgfwhMlMv7XPBZqS9zXA9sIbNdd37HqVptSGlvznVwQFd5VCydTHOh30mfUaTPZ3IWk5wgAYeTyTuznH-_dua0DCD8xH_KDDAchUtqHTkXqc4rasNmL1_Yf5TCZOqjhQlh4ZzhGp-MDPjmY0JKAOkz9C7pIbw=w961-h879-s-no-gm?authuser=0" alt="Founder 3">
+                <h1>Prathamesh Burud<br>COO</h1>
+            </div>
+            <div class="founder">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczMG-DV2B-jTI6o7Ghifq8EnSbCOYl4l_fA-hvENgQntMARJoPCUuMlIqJCYMQmfcFX_sHG6vmoKOQ8YBha-A1DxmBDf_ArATaAILx3kgDFTkcoB5UqESwSnzsJDbgiA2lz8juBCr88HWZzVf9TaAQSGQFEwys-94_UqGjj3BElNixStV1U_BofvDnpC4cRTgBFRXFqPz210cZ9jQgSNcrqKyWGdcVCPsxqAZeujGRYIm5WAtK1ddG9zr6HqHj4rbUbvvdtAcb3qnLSF7T753CPhQP9dDElIXtXV0kbOY2-PTzSupHkvW6Qa6-ENwwGj_jqPJz5MWS1Cepgw_v6hAxy4ihiYEyh8vlRYUQFAC5qkJHhrRSdBVGCFzJ9U4owk1EoBIgHBQrm1hDWOVGbNdevhxJ_Dl7X8Q4_ZyjnqqZ4yeeBjIx18PiVMxzRNcvI62x88cT3-9AV0-315MHQf1h-jqsClO9hb_bO7gEKVBl8U8HM8zQJwFaNVqedwoFlQnYEzWc6BWSS1lo5cENcV96M7cBd73-vv82RFrJBWWox6YqdWeMkWyY0dJYVrhvAik-hdTZgpnb-502QrIwv_SfSxNHqncT7rYIW1sO_KoEtFWMYM6q3DPwwJttKDeoWp4V5_2d8gi6edoPb_6TMOqEbAHpDe-PpbA7TsyRa0v5msGCv45tDsOrC_ziByyRTWduuZTh11PzNfp4TYcPdgZuor5_Ct89HLQuDlk-Eng1hCfzbtZ6IJjfnRoB05k3w7pQYUzsbkYT6ugp3aeiGn4RH36w55bg_a43HqoChX39PxuhVeSccMdEt3bx29BQeamNc_Q4-0gPJ2I0Fjl5zFSZnJ6FVBeOLqtdFF7kmWgNGePL7M6TZ3nQszcdIykh1khcjnYqCUvHuXgN4bYMtgqKTea1IIsAYKeF0FE7VJ-zPrhsNqgR3lVp-U5TuqaijW8-jkc0txNGtRftGK8d7Kz0pXmnAO7_TMSw=w614-h728-s-no-gm?authuser=0" alt="Founder 4">
+                <h1>Prathamesh Jadhav<br>CFO</h1>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

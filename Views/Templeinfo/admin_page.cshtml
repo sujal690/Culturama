@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <style>
+       
+        body {
+            font-family: 'Arial Rounded MT Bold', sans-serif;
+            background-image: url('https://img.freepik.com/free-vector/abstract-luxury-beautiful-decorative-yellow-background_1055-6454.jpg?w=740&t=st=1711697839~exp=1711698439~hmac=de9c9d0f3cfc31124483b330b9767c5d55d101ae267698cca9aace008bf9b0a0');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #ff9933;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            margin-bottom: 20px;
+        }
+
+        .container {
+            padding-top: 100px;
+            padding-bottom: 50px;
+        }
+
+        .admin-panel {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+
+        .admin-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            border: none;
+            border-bottom: 2px solid #FFC300;
+            border-radius: 0;
+            background-color: transparent;
+            color: #000;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            font-family: 'Arial Rounded MT Bold', sans-serif;
+            font-size: 16px;
+        }
+
+            .form-control:focus {
+                border-color: #FF5733;
+                box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+            }
+
+        .btn-primary, .btn-danger {
+            border-radius: 10px;
+            background-color: #FFC300;
+            border: none;
+            transition: background-color 0.3s;
+            font-family: 'Arial Rounded MT Bold', sans-serif;
+            font-size: 16px;
+        }
+
+            .btn-primary:hover, .btn-danger:hover {
+                background-color: #FF5733;
+            }
+
+        .footer {
+            padding: 10px;
+            color: #fff;
+            font-size: 14px;
+            font-family: 'Arial Rounded MT Bold', sans-serif;
+        }
+
+        
+        .table th,
+        .table td {
+            padding: 10px;
+            border: 2px solid orange; 
+            border-top-color: white; 
+            border-bottom-color: orange; 
+        }
+
+       
+        .table tbody tr {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="admin-panel mb-4">
+            <h5 class="admin-title">Admin Panel</h5>
+            <form method="post" action="@Url.Action("AddInformation", "Templeinfo")">
+                <div class="form-group">
+                    <label for="name_of_god">Name of Site</label>
+                    <input type="text" class="form-control" id="name_of_god" name="Name_of_god" required />
+                </div>
+                <div class="form-group">
+                    <label for="name_of_mandir">Type of site</label>
+                    <input type="text" class="form-control" id="name_of_mandir" name="name_of_mandir" required />
+                </div>
+                <div class="form-group">
+                    <label for="location">Location:</label>
+                    <input type="text" class="form-control" id="location" name="location" required />
+                </div>
+                <div class="form-group">
+                    <label for="stays">Stays:</label>
+                    <input type="text" class="form-control" id="stays" name="stays" required />
+                </div>
+                <div class="form-group">
+                    <label for="exact_location">Exact Location:</label>
+                    <input type="text" class="form-control" id="exact_location" name="exact_location" required />
+                </div>
+                <button type="submit" class="btn btn-primary">Add</button>
+            </form>
+        </div>
+
+        
+        <input type="text" id="searchInput" class="form-control mb-3" placeholder="Search by location..." />
+
+        
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Information</h5>
+                <table class="table" id="dataTable">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name of Site</th>
+                            <th scope="col">Type of Site</th>
+                            <th scope="col">Location</th>
+                            <th scope="col">Stays</th>
+                            <th scope="col">Exact Location</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Name_of_god</td>
+                                <td>@item.name_of_mandir</td>
+                                <td>@item.location</td>
+                                <td>@item.stays</td>
+                                <td>@item.exact_location</td>
+                                <td>
+                                    <form method="post" action="@Url.Action("DeleteInformation", "Templeinfo")">
+                                        <input type="hidden" name="id" value="@item.sr" />
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">© 2024 - RegionalTempleInfo</footer>
+
+    <script>
+        
+        document.getElementById('searchInput').addEventListener('input', function () {
+            const searchText = this.value.toLowerCase();
+            const rows = document.querySelectorAll('#dataTable tbody tr');
+
+            rows.forEach(row => {
+                const location = row.querySelector('td:nth-child(3)').textContent.toLowerCase();
+                if (location.includes(searchText)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

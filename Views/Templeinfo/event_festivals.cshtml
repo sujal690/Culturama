@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Events and Festivals</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-image: url("https://i.pinimg.com/564x/09/62/a2/0962a2917f7d69f6eaf1a7dd24b97ed4.jpg");
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-image: url('header-bg.jpg');
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+        }
+
+            .header h1 {
+                font-size: 48px;
+                margin-bottom: 20px;
+            }
+
+        .calendar-container {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .calendar {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            justify-items: center;
+            align-items: center;
+        }
+
+            .calendar .event {
+                background-color: #FF9933;
+                color: white;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+                text-align: center;
+                transition: transform 0.3s ease;
+            }
+
+                .calendar .event:hover {
+                    transform: translateY(-5px);
+                }
+
+        .event h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .event p {
+            font-size: 16px;
+            margin: 0;
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Indian Events and Festivals</h1>
+        <p>Explore the rich cultural heritage of India through its vibrant festivals and events</p>
+    </div>
+
+    <div class="calendar-container">
+        <h2>Indian Festival Calendar</h2>
+        <div class="calendar"> 
+            <div class="event">
+                <h3>MakarSakranti</h3>
+                <p>This special festival signifies the conclusion of winter and the arrival of a fresh harvest season. In Hinduism, Makar Sankranti is a day devoted to honoring the Sun God.</p>
+            </div>
+            <div class="event">
+                <h3>Diwali</h3>
+                <p>Diwali, also known as the festival of lights, celebrates the victory of light over darkness</p>
+            </div>
+            <div class="event">
+                <h3>Holi</h3>
+                <p>Holi, the festival of colors, marks the arrival of spring and the end of winter</p>
+            </div>
+            <div class="event">
+                <h3>Durga Puja</h3>
+                <p>Durga Puja is a celebration of the Hindu goddess Durga and the triumph of good over evil</p>
+            </div>
+            <div class="event">
+                <h3>Navratri</h3>
+                <p>Navratri is a nine-night festival dedicated to the worship of the Hindu deity Durga</p>
+            </div>
+        
+        </div>
+    </div>   
+</body>
+</html>
